@@ -21,8 +21,18 @@ type Props<C extends React.ElementType> = React.PropsWithChildren<
 export const Text = <C extends React.ElementType = "span">({
   as,
   children,
+  color,
+  style,
   ...restProps
 }: Props<C>) => {
   const Component = as || "span";
-  return <Component {...restProps}>{children}</Component>;
+
+  // passes in a style attribute but also allows user inline styles to work
+  const customStyles = color ? { style: { ...style, color } } : {};
+
+  return (
+    <Component {...restProps} {...customStyles}>
+      {children}
+    </Component>
+  );
 };

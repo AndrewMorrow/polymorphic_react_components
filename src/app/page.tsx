@@ -1,15 +1,16 @@
-import Image from "next/image";
-import { Inter } from "@next/font/google";
-import styles from "./page.module.css";
 import { Text } from "components/Text";
 import { Emphasis } from "components/Emphasis";
-
 
 export default function Home() {
   return (
     <main>
       {/* Invalid Attribute Support */}
-      <Text as="h1" href="https://github.com/" color={"indigo"}>
+      <Text
+        as="h1"
+        href="https://github.com/"
+        color={"indigo"}
+        style={{ backgroundColor: "white" }}
+      >
         Hello CodeSandbox
       </Text>
       {/* Valid Attribute support */}
