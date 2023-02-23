@@ -1,7 +1,10 @@
 import { Text } from "components/Text";
 import { Emphasis } from "components/Emphasis";
+import { useRef } from "react";
 
 export default function Home() {
+  const ref = useRef(null);
+
   return (
     <main>
       {/* Invalid Attribute Support */}
